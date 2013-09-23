@@ -48,7 +48,5 @@ Consider this my dotfile manifesto. Going forward, dotfiles should be:
 
 ## TODO
 
-  - Setup zsh
-  - Setup vim
   - Automatic deployment script
   - Setup other dots
