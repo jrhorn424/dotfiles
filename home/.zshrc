@@ -36,7 +36,3 @@ do
 done
 
 unset config_files
-
-alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-
-[[ -x $(which direnv) ]] && eval "$(direnv hook $0)"

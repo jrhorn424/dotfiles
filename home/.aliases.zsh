@@ -1,4 +1,12 @@
+alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
+
 alias reload!='. ~/.zshrc'
+
+alias c='clear'
+alias cl='clear; l'
+alias cls='clear; ls'
+
+alias k9="killall -9"
 
 # Super user
 alias _='sudo'
@@ -10,15 +18,3 @@ alias h='history'
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o rsize' # memory
-
-alias c='clear'
-alias cl='clear; l'
-function cdc() {
-    cd $1; ls
-}
-alias cls='clear; ls'
-
-alias k9="killall -9"
-function killnamed () {
-    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
-}
