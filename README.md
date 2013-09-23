@@ -1,8 +1,8 @@
 Dotfiles v2.0
 =============
 [Homeshick](https://github.com/andsens/homeshick) compatible dotfiles. This
-castle should be used to hold minimal setup to make you feel at home on a remote
-box, not a full configuration for a new personal computer.
+castle should be used to hold what makes you feel at home on a new personal
+computer. For a more minimal setup, see the `minimal` branch.
 
 New boxes can be bootsrapped with a simple
 [script](https://gist.github.com/andsens/2913223) to pull down only the castles
