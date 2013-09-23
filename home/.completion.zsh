@@ -1,83 +1,68 @@
-# matches case insensitive for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+setopt always_to_end # When completing from the middle of a word, move the cursor to the end of the word
+setopt auto_menu # show completion menu on successive tab press. needs unsetop menu_complete to work
+setopt auto_name_dirs # any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
+setopt complete_in_word # Allow completion from within a word/phrase
 
-# pasting with tabs doesn't perform completion
-zstyle ':completion:*' insert-tab pending
+unsetopt menu_complete # do not autoselect the first completion entry
 
-# fixme - the load process here seems a bit bizarre
-
-setopt CORRECT
-setopt COMPLETE_IN_WORD
-unsetopt noautomenu
-unsetopt always_to_end
-
-COMPLETION_WAITING_DOTS="true"
-
-# don't expand aliases _before_ completion has finished
-#   like: git comm-[tab]
-setopt complete_aliases
-
-WORDCHARS=''
-
+autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-# case-insensitive (all), partial-word and then substring completion
-if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unset CASE_SENSITIVE
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-fi
+# todo: figure out how to add other completion files for downloaded packages
 
+# man zshcontrib
+zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:*' enable git #svn cvs
+
+# Enable completion caching, use rehash to clear
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
+
+# Fallback to built in ls colors
 zstyle ':completion:*' list-colors ''
 
-# should this be in keybindings?
-bindkey -M menuselect '^o' accept-and-infer-next-history
+# Make the list prompt friendly
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
 
-zstyle ':completion:*:*:*:*:*' menu select
+# Make the selection prompt friendly when there are a lot of choices
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+
+# Add simple colors to kill
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
-# disable named-directories autocompletion
-zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
-cdpath=(.)
+# list of completers to use
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 
-# use /etc/hosts and known_hosts for hostname completion
-[ -r /etc/ssh/ssh_known_hosts ] && _global_ssh_hosts=(${${${${(f)"$(</etc/ssh/ssh_known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r ~/.ssh/known_hosts ] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-[ -r /etc/hosts ] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-hosts=(
-  "$_global_ssh_hosts[@]"
-  "$_ssh_hosts[@]"
-  "$_etc_hosts[@]"
-  "$HOST"
-  localhost
-)
-zstyle ':completion:*:hosts' hosts $hosts
+zstyle ':completion:*' menu select=1 _complete _ignored _approximate
 
-# Use caching so that commands like apt and dpkg complete are useable
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $DOTS/cache/
+# insert all expansions for expand completer
+# zstyle ':completion:*:expand:*' tag-order all-expansions
 
-# Don't complete uninteresting users
-zstyle ':completion:*:*:*:users' ignored-patterns \
-        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-        mailman mailnull mldonkey mysql nagios \
-        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
+# match uppercase from lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# ... unless we really want to.
+# offer indexes before parameters in subscripts
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
+# formatting and messages
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*' group-name ''
+
+# ignore completion functions (until the _ignored completer)
+zstyle ':completion:*:functions' ignored-patterns '_*'
+zstyle ':completion:*:scp:*' tag-order files users 'hosts:-host hosts:-domain:domain hosts:-ipaddr"IP\ Address *'
+zstyle ':completion:*:scp:*' group-order files all-files users hosts-domain hosts-host hosts-ipaddr
+zstyle ':completion:*:ssh:*' tag-order users 'hosts:-host hosts:-domain:domain hosts:-ipaddr"IP\ Address *'
+zstyle ':completion:*:ssh:*' group-order hosts-domain hosts-host users hosts-ipaddr
 zstyle '*' single-ignored show
 
-if [ "x$COMPLETION_WAITING_DOTS" = "xtrue" ]; then
-  expand-or-complete-with-dots() {
-    echo -n "\e[31m......\e[0m"
-    zle expand-or-complete
-    zle redisplay
-  }
-  zle -N expand-or-complete-with-dots
-  bindkey "^I" expand-or-complete-with-dots
-fi
+# http://www.reddit.com/r/commandline/comments/kbeoe/you_can_make_readline_and_bash_much_more_user/
+set completion-prefix-display-length 2
+set completion-map-case on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
