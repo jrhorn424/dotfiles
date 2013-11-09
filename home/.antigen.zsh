@@ -6,7 +6,6 @@ antigen use oh-my-zsh
 antigen bundles <<EOBUNDLES
   extract
   fasd
-  rand-quote
   vundle
 
   zsh-users/zsh-syntax-highlighting
