@@ -1,5 +1,3 @@
-alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-
 alias reload!='. ~/.zshrc'
 
 alias c='clear'
