@@ -14,6 +14,4 @@ antigen bundles <<EOBUNDLES
   sharat87/zsh-vim-mode
 EOBUNDLES
 
-antigen theme robbyrussell
-
 antigen apply
