@@ -1,6 +1,7 @@
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
+export DISABLE_AUTO_TITLE=true
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'

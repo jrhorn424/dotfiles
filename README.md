@@ -2,7 +2,7 @@ Dotfiles v2.0
 =============
 [Homeshick](https://github.com/andsens/homeshick) compatible dotfiles. This
 castle should be used to hold what makes you feel at home on a new personal
-computer. For a more minimal setup, see the `minimal` branch.
+computer. 
 
 New boxes can be bootsrapped with a simple
 [script](https://gist.github.com/andsens/2913223) to pull down only the castles
@@ -17,8 +17,6 @@ It's nice to have the following software:
 
 ## What's inside
 ### General
-  - [base16 colors](https://github.com/chriskempson/base16) for everything: vim,
-    zsh
   - Prefer vim key motion instead of emacs (`bindkey -v`)
 
 ### zsh
@@ -45,8 +43,3 @@ Consider this my dotfile manifesto. Going forward, dotfiles should be:
   - Should be easy to wrap my head around (*not* omz, dotzsh, etc.)
   - Should remain minimal (only installs necessary packages, defines highly
     reusable functions, not every configuration gets checked in, etc.)
-
-## TODO
-
-  - Automatic deployment script
-  - Setup other dots
