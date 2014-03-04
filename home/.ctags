@@ -1,3 +1,10 @@
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+--exclude=tags
+--exclude=logs
+--exclude=doc
+
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
 --regex-CoffeeScript=/^[ \t]*(@?[a-zA-Z$_\.1-9]+)[ \t]*(=|\:)[ \t]*(\(.*\))?[ \t]*(-|=)>/\1/f,function/
@@ -24,7 +31,6 @@
 --regex-Css=/^[ \t]*(.+)[ \t]*\{/\1/f,function/
 --regex-Css=/^[ \t]*(.+)[ \t]*,[ \t]*$/\1/f,function/
 
---langdef=Html
 --langmap=Html:.html
 --regex-Html=/^[ \t]*<([a-zA-Z]+)[ \t]*.*>/\1/f,function/
 
@@ -50,4 +56,4 @@
 
 --langmap=C++:+.mm
 
---langmap=Ruby:+(Rakefile) ]"']) ] ]"" ] ]'' ] ]"" ] ] ] ] ] ] ] ] ] ] ] ] ] ]'' ] ] ] ]"" ] ] ] ] ] ] ] ] ] ] ] ]'' ] ] ] ]"" ] ] ] ] ] ] ] ] ] ] ] ]'' ] ] ] ]"" ] ] ] ] ] ] ] ] ] ] ] ] ] ] ] ] ] ]
+--langmap=Ruby:+(Rakefile)

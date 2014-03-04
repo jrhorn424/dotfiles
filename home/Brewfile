@@ -1,0 +1,9 @@
+# $HOME/Brewfile - jeff@jrhorn.me
+#
+# A manifest for homebrew packages
+#
+
+update
+
+install the_silver_searcher
+
