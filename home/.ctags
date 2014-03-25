@@ -57,3 +57,5 @@
 --langmap=C++:+.mm
 
 --langmap=Ruby:+(Rakefile)
+--langmap=Ruby:+.erb
+--langmap=Ruby:+.slim
