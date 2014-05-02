@@ -5,8 +5,9 @@
 
 update
 
-install vim
+install vim --with-lua
 install macvim
+link --overwrite macvim
 install git
 install git-extras
 install mercurial
@@ -28,17 +29,24 @@ install coreutils
 install gnupg
 install gnutls
 install gpg-agent
-install httpd # apache
+link --overwrite gpg-agent
+# apache
+install httpd
 install nmap
 install sqlite
 install tofrodos
 install tree
 install vagrant-completion
 install wemux
-install tmux # maybe down to 1.8?
+# maybe down to 1.8?
+install tmux
+# switch tmux 1.8
+# pin tmux
 install zsh
 install direnv
+install fasd
 
 tap phinze/cask
 install brew-cask
 # cask install google-chrome
+linkapps
