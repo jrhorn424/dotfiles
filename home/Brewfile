@@ -37,6 +37,7 @@ install vagrant-completion
 install wemux
 install tmux # maybe down to 1.8?
 install zsh
+install direnv
 
 tap phinze/cask
 install brew-cask
