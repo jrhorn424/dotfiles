@@ -42,6 +42,7 @@ install wemux
 install tmux
 # switch tmux 1.8
 # pin tmux
+install reattach-to-user-namespace
 install zsh
 install direnv
 install fasd
