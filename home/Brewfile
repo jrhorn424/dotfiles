@@ -46,6 +46,7 @@ install reattach-to-user-namespace
 install zsh
 install direnv
 install fasd
+install ctags
 
 tap phinze/cask
 install brew-cask
