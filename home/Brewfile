@@ -10,6 +10,8 @@ install macvim
 link --overwrite macvim
 install git
 install git-extras
+install git-sh
+install git-flow
 install mercurial
 install subversion
 install the_silver_searcher
