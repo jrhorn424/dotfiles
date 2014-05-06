@@ -50,6 +50,10 @@ install direnv
 install fasd
 install ctags
 
+# android development
+# install android-sdk
+# install ant
+
 tap phinze/cask
 install brew-cask
 # cask install google-chrome
