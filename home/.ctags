@@ -1,9 +1,13 @@
 --recurse=yes
 --tag-relative=yes
+--fields=+l
 --exclude=.git
 --exclude=tags
 --exclude=logs
 --exclude=doc
+--exclude=coverage
+--exclude=log
+--exclude=tmp
 
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
@@ -22,6 +26,13 @@
 --regex-CoffeeScript=/^[ \t]*xit[ \t]"([^"]+)"[ \t]*,[ \t]+[-=]>/disabled: \1/f,function/
 --regex-CoffeeScript=/^[ \t]*xit[ \t]'([^']+)'[ \t]*,[ \t]+[-=]>/disabled: \1/f,function/
 --regex-CoffeeScript=/^[ \t]*class[ \t]*([a-zA-Z$_\.1-9]+)[ \t]*/\1/f,function/
+
+--langmap=javascript:.js
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
+--regex-javascript=/^[ \t]*var ([a-zA-Z_$][0-9a-zA-Z_$]*).*$/\1/v,variable/
+--regex-javascript=/^[ \t]*this\.([a-zA-Z_$][0-9a-zA-Z_$]*)[ \t]*=.*$/\1/e,export/
+--regex-javascript=/^[ \t]*([a-zA-Z_$][0-9a-zA-Z_$]*):.*$/\1/p,property/
+--regex-javascript=/^\<function\>[ \t]*([a-zA-Z_$][0-9a-zA-Z_$]*)/\1/f,function/
 
 --langdef=Css
 --langmap=Css:.css
