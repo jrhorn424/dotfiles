@@ -29,7 +29,7 @@ fi
 #
 
 if [[ ! -d "$TMPDIR" ]]; then
-  export TMPDIR="/tmp/$USER"
+  export TMPDIR="/tmp/`whoami`"
   mkdir -p -m 700 "$TMPDIR"
 fi
 
