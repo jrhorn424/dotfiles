@@ -32,29 +32,76 @@ install gnupg
 install gnutls
 install gpg-agent
 link --overwrite gpg-agent
-# apache
-install httpd
 install nmap
 install sqlite
 install tofrodos
 install tree
-install vagrant-completion
 install wemux
-# maybe down to 1.8?
 install tmux
-# switch tmux 1.8
-# pin tmux
 install reattach-to-user-namespace
 install zsh
 install direnv
 install fasd
 install ctags
+install heroku-toolbelt
 
 # android development
 # install android-sdk
 # install ant
-
-tap phinze/cask
+tap caskroom/cask
 install brew-cask
-# cask install google-chrome
+cask install asepsis
+cask install flux
+cask install evernote
+cask install skitch
+cask install textexpander
+cask install atom
+cask install textmate
+cask install sublime-text
+cask install alfred
+cask install bartender
+# cask install carbon-copy-cloner
+# cask install chronosync
+# cask install chronoagent
+cask install cleanmymac
+cask install colorpicker-developer
+cask install contexts
+cask install dropbox
+cask install flash
+cask install fluid
+cask install google-hangouts
+cask install gpgtools
+cask install hermes
+cask install hostbuddy
+# cask install keyremap4macbook
+# cask install pckeyboardhack
+cask install lastfm
+# cask install mactex
+cask install magic-launch
+cask install mailmate
+cask install marked
+# cask install nvalt
+cask install omnifocus
+cask install qlcolorcode
+cask install qlmarkdown
+cask install qlstephen
+cask install quicklook-csv
+cask install quicklook-json
+cask install rdio
+cask install screenhero
+cask install shortcat
+cask install silverlight
+cask install skype
+cask install tower
+cask install uninstallpkg
+cask install unity-web-player
+tap caskroom/fonts
+cask install font-source-code-pro
+tap caskroom/versions
+cask install onepassword
+cask install google-chrome-dev
+cask install firefox-beta
+cask install iterm2-beta
+cask install textmate2
+cask alfred link
 linkapps
