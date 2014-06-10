@@ -103,5 +103,6 @@ cask install google-chrome-dev
 cask install firefox-beta
 cask install iterm2-beta
 cask install textmate2
+cask install carbon-copy-cloner
 cask alfred link
 linkapps
