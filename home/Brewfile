@@ -44,6 +44,7 @@ install direnv
 install fasd
 install ctags
 install heroku-toolbelt
+install go
 
 # android development
 # install android-sdk
