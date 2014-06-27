@@ -45,6 +45,8 @@ install fasd
 install ctags
 install heroku-toolbelt
 install go
+install tcc
+install gcc
 
 # android development
 # install android-sdk
