@@ -20,7 +20,7 @@ function any() { # grep through running processes
 }
 
 function killnamed () {
-    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
+    any $1 | awk '{print $2}' | xargs kill
 }
 
 function zipr() {
