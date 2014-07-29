@@ -47,6 +47,9 @@ install heroku-toolbelt
 install go
 install tcc
 install gcc
+install readline
+install chibi-scheme
+install rlwrap
 
 # android development
 # install android-sdk
