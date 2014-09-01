@@ -109,5 +109,6 @@ cask install firefox-beta
 cask install iterm2-beta
 cask install textmate2
 cask install carbon-copy-cloner
+cask install cloudytabs
 cask alfred link
 linkapps
