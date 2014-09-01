@@ -8,6 +8,7 @@
 --exclude=coverage
 --exclude=log
 --exclude=tmp
+--exclude=public
 
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee
