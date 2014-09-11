@@ -5,9 +5,8 @@
 
 update
 
-install vim --with-lua
+install vim --with-lua --override-system-vi
 install macvim
-link --overwrite macvim
 install git
 install git-extras
 install git-sh
@@ -54,21 +53,14 @@ install rlwrap
 # android development
 # install android-sdk
 # install ant
-tap caskroom/cask
-install brew-cask
+
+install caskroom/cask/brew-cask
 cask install asepsis
-cask install flux
-cask install evernote
-cask install skitch
 cask install textexpander
-cask install atom
-cask install textmate
-cask install sublime-text
 cask install alfred
 cask install bartender
 # cask install chronosync
 # cask install chronoagent
-cask install cleanmymac
 cask install colorpicker-developer
 cask install contexts
 cask install dropbox
@@ -78,21 +70,16 @@ cask install google-hangouts
 cask install gpgtools
 cask install hermes
 cask install hostbuddy
-# cask install keyremap4macbook
-# cask install pckeyboardhack
-cask install lastfm
 # cask install mactex
 cask install magic-launch
 cask install mailmate
 cask install marked
-# cask install nvalt
-cask install omnifocus
+cask install nvalt
 cask install qlcolorcode
 cask install qlmarkdown
 cask install qlstephen
 cask install quicklook-csv
 cask install quicklook-json
-cask install rdio
 cask install screenhero
 cask install shortcat
 cask install silverlight
@@ -100,14 +87,15 @@ cask install skype
 cask install tower
 cask install uninstallpkg
 cask install unity-web-player
+
 tap caskroom/fonts
 cask install font-source-code-pro
+
 tap caskroom/versions
 cask install onepassword
 cask install google-chrome-dev
 cask install firefox-beta
 cask install iterm2-beta
-cask install textmate2
 cask install carbon-copy-cloner
 cask install cloudytabs
 cask alfred link
