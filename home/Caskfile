@@ -35,6 +35,10 @@ cask install skype
 cask install tower
 cask install uninstallpkg
 cask install unity-web-player
+cask install hipchat
+cask install hazel
+cask install slack
+cask install google-drive
 
 tap caskroom/fonts
 cask install font-source-code-pro
