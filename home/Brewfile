@@ -1,11 +1,16 @@
 # $HOME/Brewfile - jeff@jrhorn.me
-#
 # A manifest for homebrew packages
 
 update
 
-install vim --with-lua --override-system-vi
-install macvim
+# The following packages should be installed by bootstrap script due to
+# dependency order:
+#
+#   - install vim --with-lua --override-system-vi
+#   - install macvim
+#   - install chruby
+#   - install ruby-install
+
 install git
 install git-extras
 install git-sh
@@ -13,9 +18,7 @@ install git-flow
 install mercurial
 install subversion
 install the_silver_searcher
-install chruby
 install node
-install ruby-install
 install postgresql
 install mysql
 install ansible
@@ -47,9 +50,13 @@ install gcc
 install readline
 install chibi-scheme
 install rlwrap
+install hub
+install osxutils
+install grc
 
-# android development
-# install android-sdk
-# install ant
+# Android development packages:
+#
+#   - install android-sdk
+#   - install ant
 
 linkapps
