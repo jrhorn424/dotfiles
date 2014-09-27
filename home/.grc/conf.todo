@@ -1,0 +1,62 @@
+# ~/.grc/conf.todo
+
+# allowed colors: black, red, green, yellow, blue, magenta, cyan, white
+# none, default, bold, underline, blink, reverse, concealed, beep
+# on_black, on_green, on_yellow, on_blue, on_magenta, on_cyan, on_white
+
+# TODO:
+# regexp=TODO:
+# colours=magenta
+# ======
+
+# Line numbers
+regexp=^\d\d
+colours=white
+count=more
+======
+
+# Other numbers
+# regexp=\s[0-9][^\s]+
+# colours=green
+# count=more
+# ======
+
+# Priority
+regexp=\([A|C]\)
+colours=magenta
+count=more
+======
+
+regexp=\([B|D]\)
+colours=yellow
+count=more
+======
+
+# Projects
+regexp=\+[\w|\&]+
+colours=blue
+count=more
+======
+
+# Contexts
+regexp=@[\w]+
+colours=cyan
+count=more
+======
+
+# Next Items
+regexp=\+next
+colours=red
+count=more
+======
+# Path
+regexp=[^\w]/[\w/\.]+
+colours=blue
+count=more
+======
+# URL
+# This regexp was written by M H at regexlib.com
+regexp=(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?
+colours=red
+count=more
+#
