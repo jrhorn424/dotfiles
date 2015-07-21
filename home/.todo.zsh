@@ -11,3 +11,5 @@ t () {
     todo.sh -d ~/todo.cfg ${*} | grcat conf.todo
   fi
 }
+
+alias t='noglob t'
