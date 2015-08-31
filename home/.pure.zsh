@@ -16,6 +16,8 @@
 # %m => shortname host
 # %(?..) => prompt conditional - %(condition.true.false)
 
+export FANCY=❯
+
 # fastest possible way to check if repo is dirty
 prompt_pure_git_dirty() {
 	# check if we're in a git repo
@@ -97,7 +99,7 @@ prompt_pure_setup() {
 	[[ "$SSH_CONNECTION" != '' ]] && prompt_pure_username='%n@%m '
 
 	# prompt turns red if the previous command didn't exit with 0
-	PROMPT='%(?.%F{magenta}.%F{red})❯%f '
+	PROMPT='%(?.%F{magenta}.%F{red})$FANCY%f '
 }
 
 prompt_pure_setup "$@"
