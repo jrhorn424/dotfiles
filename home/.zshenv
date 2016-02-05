@@ -1,5 +1,5 @@
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='atom -w'
+export VISUAL='atom -w'
 export PAGER='less'
 export DISABLE_AUTO_TITLE=true
 
@@ -37,4 +37,3 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
-
