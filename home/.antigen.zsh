@@ -4,7 +4,6 @@ source $HOME/.homesick/repos/dotfiles/home/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
-  zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search
 EOBUNDLES
 
