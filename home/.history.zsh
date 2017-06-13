@@ -11,5 +11,5 @@ setopt share_history # imports new commands and appends typed commands to histor
 
 ## Command history configuration
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=20000
+SAVEHIST=20000
