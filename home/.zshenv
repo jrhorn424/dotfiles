@@ -1,8 +1,3 @@
-export EDITOR='atom -w'
-export VISUAL='atom -w'
-export PAGER='less'
-export DISABLE_AUTO_TITLE=true
-
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
