@@ -1,4 +1,5 @@
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
 alias hs='homeshick'
 alias hst='homeshick track'
 alias hsp='homeshick pull'
