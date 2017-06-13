@@ -1,11 +1,5 @@
 alias reload!='. ~/.zshrc'
 
-alias c='clear'
-alias cl='clear; l'
-alias cls='clear; ls'
-
-alias k9="killall -9"
-
 # Super user
 alias _='sudo'
 
