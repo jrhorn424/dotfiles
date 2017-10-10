@@ -1,4 +1,5 @@
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+export HOMESHICK_DIR=/usr/local/opt/homeshick
+source "/usr/local/opt/homeshick/homeshick.sh"
 
 alias hs='homeshick'
 alias hst='homeshick track'
