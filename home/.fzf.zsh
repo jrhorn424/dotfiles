@@ -10,10 +10,15 @@ if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]
   export MANPATH="$MANPATH:/usr/local/opt/fzf/man"
 fi
 
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
 # Configuration
-# -------------
-export FZF_DEFAULT_COMMAND='ag -g --nocolor ""'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='
-  --color bw
-'
+# ------------
+export FZF_DEFAULT_COMMAND='ag -g --nogroup --nocolor ""'
+export FZF_DEFAULT_OPTS='--color bw'
