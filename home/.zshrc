@@ -2,6 +2,7 @@
 # Idea to load all files that end in .zsh from holman.
 # See: https://github.com/holman/dotfiles
 
+PATH="/usr/local/bin:$(getconf PATH)"
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
