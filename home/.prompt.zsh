@@ -1,6 +1,18 @@
 autoload -U promptinit; promptinit
 
 ##
+# begin color configuration
+autoload -U colors; colors
+autoload colors && colors
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
+    eval $COLOR='%{$fg_no_bold[${(L)COLOR}]%}'  #wrap colours between %{ %} to avoid weird gaps in autocomplete
+    eval BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+eval RESET='%{$reset_color%}'
+#
+## end color configuration
+
+##
 # begin vcs_info prompt configuration
 autoload -Uz vcs_info
 function prompt_precmd() { vcs_info }
@@ -12,11 +24,11 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' get-revision true
 
-zstyle ':vcs_info:*' nvcsformats '%~'
+zstyle ':vcs_info:*' nvcsformats "${YELLOW}%~${RESET}"
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:*' unstagedstr '!'
-zstyle ':vcs_info:*' formats '%R on (%b)%m%c%u in %S'
-zstyle ':vcs_info:*' actionformats '%R on (%b|%a)%m%c%u in %S'
+zstyle ':vcs_info:*' formats "${GREEN}%R${RESET} on ${CYAN}(%b)${RESET}${MAGENTA}%m%c%u${RESET} in ${GREEN}%S${RESET}"
+zstyle ':vcs_info:*' actionformats "${YELLOW}%R${RESET} on ${CYAN}(%b|%a)${RESET}${MAGENTA}%m%c%u${RESET} in ${GREEN}%S${RESET}"
 zstyle ':vcs_info:git:*' patch-format '%10>...>%p%<< (%n applied)'
 
 zstyle ':vcs_info:*+set-message:*' hooks home-path
@@ -77,4 +89,4 @@ function +vi-git-remotebranch () {
 ## end vcs_info prompt configuration
 
 NEWLINE=$'\n'
-PROMPT='%n@%m:${vcs_info_msg_0_}${NEWLINE}%# '
+PROMPT='${RED}%n${RESET}@${BLUE}%m${RESET}:${vcs_info_msg_0_}${NEWLINE}%# '
