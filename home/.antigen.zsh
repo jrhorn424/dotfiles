@@ -1,10 +1,8 @@
 source /usr/local/share/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-antigen bundles <<EOBUNDLES
-  zsh-users/zsh-history-substring-search
-EOBUNDLES
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting # must be last
 
-antigen apply
+antigen apply > /dev/null 2>&1
