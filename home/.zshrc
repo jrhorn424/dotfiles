@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 # Idea to load all files that end in .zsh from holman.
 # See: https://github.com/holman/dotfiles
+#
+export TERM=screen-256color
 
 PATH="/usr/local/bin:$(getconf PATH)"
 
